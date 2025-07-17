@@ -41,7 +41,7 @@ func main() {
 			operations.OpenAndReadFile()
 		case 3:
 			fmt.Println("You wanted to create a file")
-			time.Sleep(1 * time.Second)
+			operations.CreateFile()
 		case 4:
 			fmt.Println("You wanted to edit a file")
 			time.Sleep(1 * time.Second)
