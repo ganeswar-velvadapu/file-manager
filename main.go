@@ -43,8 +43,8 @@ func main() {
 			fmt.Println("You wanted to create a file")
 			operations.CreateFile()
 		case 4:
-			fmt.Println("You wanted to edit a file")
-			time.Sleep(1 * time.Second)
+			fmt.Println("You wanted to edit the content a file")
+			operations.WriteToFile()
 		case 5:
 			fmt.Println("You wanted to delete a file")
 			time.Sleep(1 * time.Second)
