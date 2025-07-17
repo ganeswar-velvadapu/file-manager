@@ -2,49 +2,52 @@ package main
 
 import (
 	"fmt"
+
 	"time"
 
 	"github.com/ganeswar-velvadapu/file-manager/operations"
 )
 
-func main(){
-	
-	var i int;
+func main() {
 
-	fmt.Println("Click 1 to open and read a file")
-	fmt.Println("Click 2 to create a file")
-	fmt.Println("Click 3 to open a directory")
-	fmt.Println("Click 4 to create a directory")
-	fmt.Println("Click 5 to create a file inside a directory")
+	for {
+		fmt.Println("\nChoose an option:")
+		fmt.Println("1 - Open and read a file")
+		fmt.Println("2 - Create a file")
+		fmt.Println("3 - Open a directory")
+		fmt.Println("4 - Create a directory")
+		fmt.Println("5 - Create a file inside a directory")
+		fmt.Println("0 - Exit")
 
-	fmt.Println("Please enter your number")
-	fmt.Scanln(&i)
-		
-	 for {
-		if i ==0 {
-			break;
-		}else if i == 1{
-			fmt.Println("You want to open and read file")
+		fmt.Print("Enter your choice: ")
+		var i int
+		i, err := fmt.Scanln(&i)
+		if err != nil {
+			fmt.Println("Invalid input. Please enter a number.")
+			continue
+		}
+
+		switch i {
+		case 0:
+			fmt.Println("Exiting...")
+			return
+		case 1:
+			fmt.Println("You want to open and read a file")
 			operations.OpenAndReadFile()
-			time.Sleep(1 * time.Second)
-		}else if i == 2{
+		case 2:
 			fmt.Println("You want to create a file")
 			time.Sleep(1 * time.Second)
-		}else if i == 3{
+		case 3:
 			fmt.Println("You want to open a directory")
 			time.Sleep(1 * time.Second)
-		}else if i == 4{
+		case 4:
 			fmt.Println("You want to create a directory")
 			time.Sleep(1 * time.Second)
-		}else if i == 5{
+		case 5:
 			fmt.Println("You want to create a file inside a directory")
 			time.Sleep(1 * time.Second)
-		}else{
-			fmt.Print("Please select a valid option\n")
+		default:
+			fmt.Println("Please select a valid option")
 		}
-    }	
-
-
-
-
+	}
 }
